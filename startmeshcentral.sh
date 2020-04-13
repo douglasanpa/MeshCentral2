@@ -78,7 +78,9 @@ fi
 
 if ! [ -f meshcentral-data/agentserver-cert-private.key ]
 then 
-	node node_modules/meshcentral/meshcentral.js --cert $HOSTNAME
+	cd ./node_modules/meshcentral
+	node meshcentral --cert $HOSTNAME
 else 
-	node node_modules/meshcentral/meshcentral.js
+	cd ./node_modules/meshcentral
+	node meshcentral
 fi
